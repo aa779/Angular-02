@@ -15,7 +15,7 @@ thead {
   background-color: #c2b9ff;
   font-size: 16pt;
 }
-tbody > tr:hover {
+tbody > .hover-spot:hover {
   background-color: #c4bbff;
 }
 label {

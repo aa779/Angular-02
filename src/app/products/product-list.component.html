@@ -6,7 +6,6 @@
     <div class='col-md-4'>
       <!--label for="exampleFormControlInput1" class="form-control">Filter: </label-->
       <input type='text' [(ngModel)]='listFilter' class="form-control" placeholder="Filter">
-      <span>Filtered by: {{listFilter}}</span>
     </div>  
   </div>
   <div class='table-responsive'>
@@ -26,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let product of filteredProducts'>
+        <tr *ngFor='let product of filteredProducts' class='hover-spot'>
           <td style='text-align: center'>
             <img 
               *ngIf='showImage'
@@ -51,7 +50,14 @@
               {{ product.price | number:'1.2-2' | convertToCommas:'.' }}
             </span>
           </td>
-          <td><pm-star [rating]='product.starRating'></pm-star></td>
+          <td style='color:#fd0;text-shadow: #777 1px 1px 1px'>
+            <pm-star [rating]='product.starRating'></pm-star>
+          </td>
+        </tr>
+        <tr>
+          <td colspan='6' style='background-color:#efeefe'>
+            <span style='font-weight:700'>Filtered by:</span> {{listFilter}}
+          </td>
         </tr>
       </tbody>
     </table>
