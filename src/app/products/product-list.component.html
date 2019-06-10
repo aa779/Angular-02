@@ -12,21 +12,21 @@
     <table class='table' *ngIf='products && products.length'>
       <thead>
         <tr>
-          <th width='100' style='text-align: center'>
+          <th width='100' style='text-align: center' class='unviewable2'>
             <button style='width: 120px' class='btn btn-primary' (click)='toggleImage()'>
               {{showImage ? 'Hide' : 'Show'}} Image
             </button>
           </th>
           <th>Product</th>
-          <th width='100'>Code</th>
-          <th width='120'>Available</th>
+          <th width='100' class='unviewable3'>Code</th>
+          <th width='120' class='unviewable1'>Available</th>
           <th width='100'>Price</th>
-          <th width='100'>Ratings</th>
+          <th width='100' class='unviewable2'>Ratings</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor='let product of filteredProducts' class='hover-spot'>
-          <td style='text-align: center'>
+          <td style='text-align: center' class='unviewable2'>
             <img 
               *ngIf='showImage'
               [src]='product.imageUrl' 
@@ -38,10 +38,10 @@
           <td>
             {{ product.productName | uppercase }}
           </td>
-          <td style='text-align:right'>
+          <td style='text-align:right' class='unviewable3'>
             {{ product.productCode | lowercase | convertToSpaces:'-' }}
           </td>
-          <td style='text-align:left'>
+          <td style='text-align:left' class='unviewable1'>
               {{ product.releaseDate | date:'dd/MM/yyyy' }}
           </td>
           <td>
@@ -50,7 +50,7 @@
               {{ product.price | number:'1.2-2' | convertToCommas:'.' }}
             </span>
           </td>
-          <td style='color:#fd0;text-shadow: #777 1px 1px 1px'>
+          <td style='color:#fd0;text-shadow: #777 1px 1px 1px' class='unviewable2'>
             <pm-star [rating]='product.starRating'></pm-star>
           </td>
         </tr>

@@ -14,9 +14,11 @@ h2 {
 thead {
   background-color: #c2b9ff;
   font-size: 16pt;
+  transition: background-color .5s;
 }
 tbody > .hover-spot:hover {
   background-color: #c4bbff;
+  transition: background-color .5s;
 }
 label {
   position: relative;
@@ -24,4 +26,21 @@ label {
   display: inline;
   background: none;
   border: 0;
+}
+@media screen and (max-width: 768px) {
+  .unviewable1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .unviewable2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .unviewable3 {
+    display: none;
+  }
 }
