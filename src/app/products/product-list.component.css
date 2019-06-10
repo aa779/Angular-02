@@ -1,0 +1,18 @@
+*, html {
+  font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
+}
+h1 {
+  padding: 30px 60px;
+}
+h2 {
+  background-color: #eee;
+  padding: 10px;
+  border-bottom: 4px solid #b1a8ee;
+}
+thead {
+  background-color: #c2b9ff;
+  font-size: 16pt;
+}
+.form-control {
+  display: inline;
+}
