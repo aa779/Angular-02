@@ -4,7 +4,6 @@
   </div>
   <div class='card-body' style="width: 100%; background-color: #eee">
     <div class='col-md-4'>
-      <!--label for="exampleFormControlInput1" class="form-control">Filter: </label-->
       <input type='text' [(ngModel)]='listFilter' class="form-control" placeholder="Filter">
     </div>  
   </div>
@@ -36,7 +35,9 @@
             >
           </td>
           <td>
-            {{ product.productName | uppercase }}
+            <a [routerLink]="['/products', product.productId]">
+              {{ product.productName | uppercase }}
+            </a>
           </td>
           <td style='text-align:right' class='unviewable3'>
             {{ product.productCode | lowercase | convertToSpaces:'-' }}
