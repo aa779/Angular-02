@@ -4,25 +4,25 @@
   </div>
   <div class='card-body' style="width: 100%; background-color: #eee">
     <div class='col-md-4'>
-      <label  for="exampleFormControlInput1">Filter: </label>
-      <input type='text' [(ngModel)]='listFilter' class="form-control">
-      <h5>Filtered by: {{listFilter}}</h5>
+      <!--label for="exampleFormControlInput1" class="form-control">Filter: </label-->
+      <input type='text' [(ngModel)]='listFilter' class="form-control" placeholder="Filter">
+      <span>Filtered by: {{listFilter}}</span>
     </div>  
   </div>
   <div class='table-responsive'>
     <table class='table' *ngIf='products && products.length'>
       <thead>
         <tr>
-          <th style='text-align: center'>
+          <th width='100' style='text-align: center'>
             <button style='width: 120px' class='btn btn-primary' (click)='toggleImage()'>
               {{showImage ? 'Hide' : 'Show'}} Image
             </button>
           </th>
           <th>Product</th>
-          <th>Code</th>
-          <th>Available</th>
-          <th>Price</th>
-          <th>Ratings</th>
+          <th width='100'>Code</th>
+          <th width='120'>Available</th>
+          <th width='100'>Price</th>
+          <th width='100'>Ratings</th>
         </tr>
       </thead>
       <tbody>
@@ -36,11 +36,22 @@
               [style.margin.px]='ImageMargin'
             >
           </td>
-          <td>{{ product.productName | uppercase }}</td>
-          <td>{{ product.productCode | lowercase | convertToSpaces:'-' }}</td>
-          <td>{{ product.releaseDate | date:'dd/MM/yyyy' }}</td>
-          <td style='text-align: right'>{{ product.price | currency:'R$':'symbol':'1.2-2' }}</td>
-          <td>{{ product.starRating }}</td>
+          <td>
+            {{ product.productName | uppercase }}
+          </td>
+          <td style='text-align:right'>
+            {{ product.productCode | lowercase | convertToSpaces:'-' }}
+          </td>
+          <td style='text-align:left'>
+              {{ product.releaseDate | date:'dd/MM/yyyy' }}
+          </td>
+          <td>
+            <span>R$</span>
+            <span style='display:inline-block;width:60px;text-align:right'>
+              {{ product.price | number:'1.2-2' | convertToCommas:'.' }}
+            </span>
+          </td>
+          <td><pm-star [rating]='product.starRating'></pm-star></td>
         </tr>
       </tbody>
     </table>

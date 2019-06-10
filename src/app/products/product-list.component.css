@@ -8,11 +8,20 @@ h2 {
   background-color: #eee;
   padding: 10px;
   border-bottom: 4px solid #b1a8ee;
+  font-weight: 400;
+  font-size: 16pt;
 }
 thead {
   background-color: #c2b9ff;
   font-size: 16pt;
 }
-.form-control {
+tbody > tr:hover {
+  background-color: #c4bbff;
+}
+label {
+  position: relative;
+  top: 30px;
   display: inline;
+  background: none;
+  border: 0;
 }
