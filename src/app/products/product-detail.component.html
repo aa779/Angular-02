@@ -1,5 +1,46 @@
-<div class='card'><!-- *ngIf='products'-->
+<div class='card' *ngIf='product'>
   <div class='card-reader'>
     <h2>{{pageTitle + ': ' + product.productName}}</h2>
+  </div>
+  <div class='card-body'>
+    <table class='table'>
+      <tr class='hover-spot'>
+        <td style='text-align: center; width: 250px;' class='unviewable1'>
+          <img 
+            [src]='product.imageUrl' 
+            [title]='product.productName' 
+            [style.width.px]='imageWidth' 
+            [style.margin.px]='ImageMargin'
+          >
+        </td>
+        <td style='text-align: right; font-weight: 600'>
+          Id:<br>
+          Produto:<br>
+          Código:<br>
+          Release:<br>
+          Preço:<br>
+          Rating:<br>
+        </td>
+        <td style='min-width: 200px;'>
+          {{ product.productId }}<br>
+          {{ product.productName | uppercase }}<br>
+          {{ product.productCode | lowercase | convertToSpaces:'-' }}<br>
+          {{ product.releaseDate | date:'dd/MM/yyyy' }}<br>
+          R${{ product.price | number:'1.2-2' | convertToCommas:'.' }}<br>
+          <span style='color:#fd0;text-shadow: #777 1px 1px 1px'>
+            <pm-star [rating]='product.starRating'></pm-star>
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class='card-footer'>
+    <button 
+      class='btn btn-outline-secondary' 
+      (click)='onBack()'
+      style='width:80px'
+    >
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
   </div>
 </div>

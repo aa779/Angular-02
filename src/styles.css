@@ -2,6 +2,39 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 
+body {
+  font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  background-color: #eee;
+  padding: 10px;
+  border-bottom: 4px solid #b1a8ee;
+  font-weight: 400;
+  font-size: 16pt;
+}
+
+h1 {
+  padding: 30px 60px;
+}
+thead {
+  background-color: #c2b9ff;
+  font-size: 16pt;
+  transition: background-color .5s;
+}
+tbody > .hover-spot:hover {
+  background-color: #c4bbff;
+  transition: background-color .5s;
+}
+
+label {
+  position: relative;
+  top: 30px;
+  display: inline;
+  background: none;
+  border: 0;
+}
+
 div.card-header {
  font-size: large;
 }
@@ -12,4 +45,22 @@ div.card {
 
 .table {
   margin-top: 10px
+}
+
+@media screen and (max-width: 768px) {
+  .unviewable1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .unviewable2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .unviewable3 {
+    display: none;
+  }
 }
